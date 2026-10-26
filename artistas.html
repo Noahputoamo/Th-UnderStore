@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TH-UNDER STORE: prendas urbanas aerografiadas, exclusivas y creadas por artistas mexicanos.">
+  <title>Artistas | TH-UNDER STORE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-artists">
+  <div class="announcement-bar">LIVE <span>·</span> CREATE <span>·</span> WEAR <span class="announcement-note">Arte mexicano. Prendas que hablan por ti.</span></div>
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark container py-3" aria-label="Navegación principal">
+      <a class="navbar-brand brand-mark" href="index.html" aria-label="TH-UNDER STORE, inicio">
+         <img src="img/LETRAS THUNDER II.png" alt="TH-UNDER STORE" class="logo-img">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+          <li class="nav-item"><a class="nav-link active" href="artistas.html">Artistas</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html#contacto">Contacto</a></li>
+          <li class="nav-item"><button class="cart-button" id="openCart" type="button" aria-label="Abrir carrito">Bolsa <span id="cartCount">0</span></button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <!-- FOTO DEL BANNER — cambia solamente el nombre del archivo dentro de url('...') -->
+      <div class="hero-backdrop" style="--foto-banner: url('img/banner-th-under.jpg')"></div>
+      <div class="container hero-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> STREETWEAR · ARTE · IDENTIDAD</p>
+        <h1>NO VISTAS<br><span>LO MISMO.</span></h1>
+        <p class="hero-copy">Prendas únicas creadas por artistas mexicanos. Tu estilo, tu historia, tu lienzo.</p>
+        <div class="hero-actions">
+          <a class="btn btn-neon" href="#tienda">Explorar colección <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#artistas">Conoce a los artistas</a>
+        </div>
+        <div class="hero-stamp"><span>TH—</span><strong>UNDER</strong><small>ORIGINALS / MX</small></div>
+      </div>
+      <div class="hero-bottom"><span>01 / EXPRESA TU IDENTIDAD</span><span>HECHO PARA SALIR DE LO COMÚN ↓</span></div>
+    </section>
+
+    <section class="ticker" aria-label="Lema de la marca"><div>LIVE <span>✳</span> CREATE <span>✳</span> WEAR <span>✳</span> LIVE <span>✳</span> CREATE <span>✳</span> WEAR <span>✳</span></div></section>
+
+    <section class="section-pad" id="tienda">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">DESCUBRE TU PRÓXIMA PIEZA</p><h2>DROP <span>DESTACADO</span></h2></div>
+          <p class="section-description">No es producción en masa. Son piezas con carácter, creadas para quienes hacen las cosas a su manera.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar productos">
+          <button class="filter-chip active" data-filter="todos">Todo</button>
+          <button class="filter-chip" data-filter="playeras">Playeras</button>
+          <button class="filter-chip" data-filter="sudaderas">Sudaderas</button>
+          <button class="filter-chip" data-filter="chamarras">Chamarras</button>
+          <button class="filter-chip" data-filter="accesorios">Accesorios</button>
+        </div>
+        <!-- =============================================================
+             FOTOS DE LOS PRODUCTOS — EDITAR SOLO LOS src="..."
+             Guarda las fotos dentro de la carpeta img/.
+             Ejemplo: src="img/mi-playera.jpg"
+             No necesitas editar js/script.js para cambiar una fotografía.
+             Si aún no existe una imagen, se conserva el dibujo original.
+             ============================================================= -->
+        <template id="imagenes-productos">
+          <img data-id="1" src="img/PINKP.png" alt="Pink panter">
+          <img data-id="2" src="img/producto-02.jpg" alt="Electric Dreams Hoodie">
+          <img data-id="3" src="img/producto-03.jpg" alt="Static Bloom Jacket">
+          <img data-id="4" src="img/producto-04.jpg" alt="No Signal Tee">
+          <img data-id="5" src="img/producto-05.jpg" alt="Underground Cargo">
+          <img data-id="6" src="img/producto-06.jpg" alt="TH Custom Cap">
+        </template>
+        <!-- FIN DE LAS FOTOS DE PRODUCTOS -->
+        <div class="row g-4 product-grid" id="productGrid" aria-live="polite"></div>
+        <div class="center-action"><button class="btn btn-outline-neon" id="showAllProducts">Ver colección completa <span>↗</span></button></div>
+      </div>
+    </section>
+
+    <section class="artist-section section-pad" id="artistas">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow">EL ARTE DETRÁS DE LA PRENDA</p><h2>CONOCE A LOS <span>ARTISTAS</span></h2></div>
+          <p class="section-description">Cada pieza lleva una mirada, una técnica y una historia. Descubre a quienes transforman ropa en arte.</p>
+        </div>
+        <!-- =============================================================
+             FOTOS DE LOS ARTISTAS — EDITAR SOLO LOS src="..."
+             Guarda las fotos dentro de img/. Si no existen aún,
+             se mostrarán las iniciales NX, K4 y M0, como antes.
+             ============================================================= -->
+        <template id="imagenes-artistas">
+          <img data-id="1" src="img/QUINOAH.png" alt="Blue Benji">
+          <img data-id="2" src="img/JanDro.jpg" alt="Kira 404">
+          <img data-id="3" src="img/FERNYYY.png" alt="Muro Cero">
+        </template>
+        <!-- FIN DE LAS FOTOS DE ARTISTAS -->
+        <div class="row g-4" id="artistGrid"></div>
+      </div>
+    </section>
+
+    <section class="manifesto-section" id="nosotros">
+      <div class="container manifesto-grid">
+        <div class="manifesto-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="manifesto-th">TH—<br>UNDER</span><span class="manifesto-side">INDEPENDENT ART / MEXICO</span></div>
+        <div class="manifesto-copy">
+          <p class="eyebrow">NO SOMOS PARA TODOS. SOMOS PARA TI.</p>
+          <h2>LA CALLE ES<br><span>NUESTRO LIENZO.</span></h2>
+          <p>TH-UNDER STORE nace para conectar el talento de artistas independientes mexicanos con personas que buscan algo más que una prenda. Creemos en la creatividad, la personalización y la exclusividad: vestir también puede ser una forma de expresión.</p>
+          <div class="values-row"><div><strong>01</strong><span>Creatividad</span></div><div><strong>02</strong><span>Personalización</span></div><div><strong>03</strong><span>Exclusividad</span></div></div>
+          <a href="#contacto" class="btn btn-neon">Conecta con nosotros <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="custom-section section-pad">
+      <div class="container custom-panel">
+        <div><p class="eyebrow">TU IDEA. TU PRENDA.</p><h2>HAZLA <span>ÚNICA.</span></h2><p>¿Tienes una idea, una frase o una ilustración en mente? Cuéntanos qué quieres crear y te ayudaremos a convertirlo en una pieza con identidad.</p></div>
+        <a class="btn btn-neon" href="#contacto">Personaliza tu pieza <span>↗</span></a>
+        <div class="custom-decoration">CREATE<br>YOUR<br>OWN.</div>
+      </div>
+    </section>
+
+    <section class="contact-section section-pad" id="contacto">
+      <div class="container contact-grid">
+        <div><p class="eyebrow">HABLEMOS</p><h2>¿LISTO PARA<br><span>DESTACAR?</span></h2><p class="section-description">Escríbenos para consultar pedidos, personalizaciones o colaboraciones con artistas.</p></div>
+        <div class="contact-cards">
+          <a class="contact-card" href="https://wa.me/525627125101" target="_blank" rel="noopener"><span class="contact-icon">↗</span><small>WHATSAPP</small><strong>+52 56 27 12 51 01</strong><span>Consulta tu pedido</span></a>
+          <a class="contact-card" href="mailto:thunder.store@gmail.com"><span class="contact-icon">@</span><small>EMAIL</small><strong>thunder.store@gmail.com</strong><span>Cuéntanos tu idea</span></a>
+          <div class="contact-card"><span class="contact-icon">⌖</span><small>TH-UNDER STORE</small><strong>Comunidad digital</strong><span>Talento mexicano, alcance nacional</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main"><a class="navbar-brand brand-mark" href="#inicio"><span class="brand-symbol">TH</span><span class="brand-word">-UND3R <small>STORE</small></span></a><p>LIVE. CREATE. WEAR.</p><div class="footer-links"><a href="tienda.html">Tienda</a><a href="artistas.html">Artistas</a><a href="nosotros.html">Nosotros</a><a href="nosotros.html#contacto">Contacto</a></div></div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> TH-UNDER STORE. Proyecto académico.</span><span>ARTE MEXICANO · PRENDAS ÚNICAS</span></div>
+  </footer>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="siteToast" class="toast text-bg-dark border-0" role="status" aria-live="polite"><div class="d-flex"><div class="toast-body" id="toastMessage">Producto agregado.</div><button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button></div></div></div>
+
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true">
+    <div class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header"><div><p class="eyebrow">TU SELECCIÓN</p><h2 id="cartTitle">TU BOLSA <span id="cartTotalItems">(0)</span></h2></div><button class="close-cart" id="closeCart" aria-label="Cerrar bolsa">×</button></div>
+      <div id="cartItems" class="cart-items"><p class="empty-cart">Tu bolsa está vacía.<br>Encuentra una pieza que hable por ti.</p></div>
+      <div class="cart-footer"><div class="cart-total"><span>Subtotal</span><strong id="cartSubtotal">$0 MXN</strong></div><p class="cart-note">Demostración académica: el pago no está conectado.</p><button class="btn btn-neon w-100" id="checkoutButton">Continuar pedido <span>↗</span></button></div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content product-modal-content"><button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Cerrar">×</button><div class="modal-product-art" id="modalArt"></div><div class="modal-product-info"><p class="eyebrow" id="modalCategory">PIEZA EXCLUSIVA</p><h2 id="productModalTitle">Nombre del producto</h2><p id="modalArtist"></p><strong id="modalPrice" class="modal-price"></strong><p id="modalDescription"></p><label class="size-label" for="productSize">Talla</label><select class="form-select size-select" id="productSize"><option value="CH">CH</option><option value="M" selected>M</option><option value="G">G</option><option value="XG">XG</option></select><button class="btn btn-neon w-100 mt-3" id="modalAddToCart">Agregar a la bolsa <span>↗</span></button></div></div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
